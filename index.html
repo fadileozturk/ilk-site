@@ -2,49 +2,118 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Balonlu Site</title>
+  <title>Fadile'nin Blogu</title>
   <style>
     body {
-      background-color: #f0f8ff;
-      text-align: center;
       font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+    }
+    .about {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .about img {
+      border-radius: 50%;
+      width: 150px;
+      margin-right: 20px;
+    }
+    .post {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
     }
     button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
       padding: 10px 20px;
-      font-size: 18px;
-      margin-top: 20px;
       cursor: pointer;
+      border-radius: 5px;
     }
-    .balloon {
-      position: absolute;
-      font-size: 40px;
-      animation: floatUp 5s linear forwards;
-    }
-    @keyframes floatUp {
-      from { bottom: 0; opacity: 1; }
-      to { bottom: 100%; opacity: 0; }
+    button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <h1>Merhaba Dünya!</h1>
-  <p>Butona tıkla, balonlar uçsun 🎈</p>
-  <button onclick="releaseBalloons()">Balonları Uçur</button>
+  <header>
+    <h1>Fadile'nin Kişisel Blogu</h1>
+    <p>Hayatım, düşüncelerim ve projelerim</p>
+  </header>
 
-  <script>
-    function releaseBalloons() {
-      for (let i = 0; i < 5; i++) {
-        let balloon = document.createElement("div");
-        balloon.className = "balloon";
-        balloon.style.left = Math.random() * window.innerWidth + "px";
-        balloon.innerHTML = "🎈";
-        document.body.appendChild(balloon);
+  <nav>
+    <a href="#about">Hakkımda</a>
+    <a href="#posts">Yazılarım</a>
+    <a href="#contact">İletişim</a>
+  </nav>
 
-        setTimeout(() => {
-          balloon.remove();
-        }, 5000);
-      }
-    }
-  </script>
+  <div class="container">
+    <section id="about" class="about">
+      <img src="https://via.placeholder.com/150" alt="Profil Fotoğrafı">
+      <div>
+        <h2>Hakkımda</h2>
+        <p>Merhaba! Ben Fadile. Yazılım öğrenmeyi, yeni teknolojileri denemeyi ve kendi projelerimi geliştirmeyi seviyorum. Bu blogda hem kişisel deneyimlerimi hem de öğrendiklerimi paylaşacağım.</p>
+        <button onclick="alert('Merhaba! Bloguma hoş geldin 😊')">Selam Ver</button>
+      </div>
+    </section>
+
+    <section id="posts">
+      <h2>Son Yazılarım</h2>
+      <div class="post">
+        <h3>İlk Blog Yazım</h3>
+        <p>Bu benim ilk blog yazım! Burada web geliştirme yolculuğumdan bahsedeceğim. GitHub Pages ile nasıl site açtığımı ve öğrendiklerimi paylaşacağım.</p>
+      </div>
+      <div class="post">
+        <h3>Hayallerim ve Hedeflerim</h3>
+        <p>Bir gün kendi yazılım projelerimi dünyaya açmak istiyorum. Öğrenmeye devam ettikçe bu blogda yolculuğumu paylaşacağım.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>İletişim</h2>
+      <p>Bana ulaşmak için: <a href="mailto:fadile@example.com">fadile@example.com</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2026 Fadile'nin Blogu</p>
+  </footer>
 </body>
 </html>
