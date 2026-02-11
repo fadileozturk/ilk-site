@@ -2,10 +2,49 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Benim İlk Web Sitem</title>
+  <title>Balonlu Site</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .balloon {
+      position: absolute;
+      font-size: 40px;
+      animation: floatUp 5s linear forwards;
+    }
+    @keyframes floatUp {
+      from { bottom: 0; opacity: 1; }
+      to { bottom: 100%; opacity: 0; }
+    }
+  </style>
 </head>
 <body>
   <h1>Merhaba Dünya!</h1>
-  <p>Bu benim GitHub Pages ile yayına aldığım ilk web sitem.</p>
+  <p>Butona tıkla, balonlar uçsun 🎈</p>
+  <button onclick="releaseBalloons()">Balonları Uçur</button>
+
+  <script>
+    function releaseBalloons() {
+      for (let i = 0; i < 5; i++) {
+        let balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * window.innerWidth + "px";
+        balloon.innerHTML = "🎈";
+        document.body.appendChild(balloon);
+
+        setTimeout(() => {
+          balloon.remove();
+        }, 5000);
+      }
+    }
+  </script>
 </body>
 </html>
